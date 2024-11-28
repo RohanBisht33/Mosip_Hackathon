@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure ID E-KYC</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <h3>Welcome to Secure ID!</h3>
+            <p>Create an account, log in, or reset your password to get started.</p>
+        </div>
+        <div class="right-container">
+            <!-- Create Account Form -->
+            <div class="form-wrapper active" id="create-account-form">
+                <img src="Game.png" alt="Logo" class="logo">
+                <h2>Create Account</h2>
+                <form onsubmit="return createAccount(event)">
+                    <div class="input-field">
+                        <input type="text" id="new-username" required>
+                        <label for="new-username">Username</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="new-password" required>
+                        <label for="new-password">Password</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="confirm-password" required>
+                        <label for="confirm-password">Confirm Password</label>
+                    </div>
+                    <button class="btn">Create Account</button>
+                    <p id="create-error-message"></p>
+                    <p class="links">
+                        <a href="#" onclick="showForm('login-form')">Already have an account? Login</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-wrapper hidden" id="login-form">
+                <img src="Game.png" alt="Logo" class="logo">
+                <h2>Login</h2>
+                <form onsubmit="return validateForm(event)">
+                    <div class="input-field">
+                        <input type="text" id="username" required>
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="password" required>
+                        <label for="password">Password</label>
+                    </div>
+                    <button class="btn">Login</button>
+                    <p id="error-message"></p>
+                    <p class="links">
+                        <a href="#" onclick="showForm('create-account-form')">Create an Account</a> |
+                        <a href="#" onclick="showForm('reset-password-form')">Forgot Password?</a>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Reset Password Form -->
+            <div class="form-wrapper hidden" id="reset-password-form">
+                <img src="Game.png" alt="Logo" class="logo">
+                <h2>Reset Password</h2>
+                <form onsubmit="return resetPassword(event)">
+                    <div class="input-field">
+                        <input type="text" id="reset-email" required>
+                        <label for="reset-email">Enter Username</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="new-password-reset" required>
+                        <label for="new-password-reset">New Password</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" id="confirm-password-reset" required>
+                        <label for="confirm-password-reset">Confirm New Password</label>
+                    </div>
+                    <button class="btn">Reset Password</button>
+                    <p id="reset-error-message"></p>
+                    <p class="links">
+                        <a href="#" onclick="showForm('login-form')">Back to Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
