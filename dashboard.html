@@ -16,7 +16,7 @@
             </div>
             <nav class="sidebar-nav">
                 <ul>
-                    <li><a href="#" id="issued-documents-tab" class="tab-link active" onclick="showTab('issued-documents')">Issued Documents</a></li>
+                    <li><a href="#" id="issued-documents-tab" class="tab-link" onclick="showTab('issued-documents')">Issued Documents</a></li>
                     <li><a href="#" id="issue-new-documents-tab" class="tab-link" onclick="showTab('issue-new-documents')">Issue New Documents</a></li>
                     <li><a href="#" id="profile-tab" class="tab-link" onclick="showTab('profile')">Profile</a></li>
                     <li><a href="#" id="settings-tab" class="tab-link" onclick="showTab('settings')">Settings</a></li>
@@ -40,8 +40,16 @@
             <div id="issue-new-documents" class="tab-content">
                 <h2>Issue New Documents</h2>
                 <div class="upload-section">
-                    <button class="btn upload-btn">Upload Document</button>
-                    <button class="btn scan-btn">Scan Document</button>
+                    <button class="btn upload-btn">
+                        <input type="file" id="uploadDoc" accept="image/*,application/pdf" style="display: none;">
+                        <label for="uploadDoc" class="upload-btn">Upload Document</label>
+                        <img id="uploadPreview" src="" alt="Document Preview" style="display:none; margin-top: 20px; max-width: 100%; border-radius: 5px;">
+                    </button>
+                    <button class="btn upload-btn">
+                        <input type="file" id="scanDoc" accept="image/*" capture="environment" style="display: none;">
+                        <label for="scanDoc" class="scan-btn">Scan Document</label>
+                        <img id="scanPreview" src="" alt="Scanned Document Preview" style="display:none; margin-top: 20px; max-width: 100%; border-radius: 5px;">
+                    </button> 
                 </div>
                 <p>Upload or scan a document to issue a new one.</p>
             </div>

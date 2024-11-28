@@ -154,3 +154,9 @@ h1 {
     }
 }
 
+
+.tab-link{
+    border: 2px solid white;
+    text-decoration: none;
+    background-color:#1a1833;
+}
