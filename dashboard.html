@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure ID Dashboard</title>
     <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 </head>
 <body>
     <div class="dashboard-container">
         <!-- Sidebar Navigation -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <img src="Game.png" alt="Logo" class="logo">
+                <img src="Game.png" alt="Logo" class="logo" >
                 <h1>Secure ID</h1>
             </div>
-            <nav class="sidebar-nav">
+            <nav class="sidebar-nav" id="menu">
                 <ul>
+                    <li><a href="#" id="profile-tab" class="tab-link" onclick="showTab('profile')">Profile</a></li>
+                    <li><a href="#" id="digital-id-tab" class="tab-link" onclick="showTab('digital-id')">Digital ID</a></li>
                     <li><a href="#" id="issued-documents-tab" class="tab-link" onclick="showTab('issued-documents')">Issued Documents</a></li>
                     <li><a href="#" id="issue-new-documents-tab" class="tab-link" onclick="showTab('issue-new-documents')">Issue New Documents</a></li>
-                    <li><a href="#" id="profile-tab" class="tab-link" onclick="showTab('profile')">Profile</a></li>
+
                     <li><a href="#" id="settings-tab" class="tab-link" onclick="showTab('settings')">Settings</a></li>
+
                 </ul>
             </nav>
             <button class="btn logout-btn">Logout</button>
@@ -28,48 +33,108 @@
         <!-- Content Area -->
         <div class="content">
             <h4>Welcome to Your Dashboard!</h4>
-
-            <!-- Issued Documents Tab -->
-            <div id="issued-documents" class="tab-content active">
-                <h2>Issued Documents</h2>
-                <p>Your issued documents will appear here.</p>
-                <!-- Add table or grid view of issued documents -->
+            <div id="home" class="tab-content">
+                <h2>Welcome to Secure ID</h2>
+                <p>
+                    Secure ID is your go-to solution for seamless and secure identity management.
+                    Our platform allows you to store, share, and manage your personal information
+                    with ease while ensuring top-notch security and privacy.
+                </p>
+                <h3>Features:</h3>
+                <ul>
+                    <li>Upload and manage documents</li>
+                    <li>Generate unique digital IDs</li>
+                    <li>Scan and save physical documents</li>
+                    <li>Securely update your profile</li>
+                    <li>Generate QR codes for instant sharing</li>
+                </ul>
             </div>
 
+            <!-- Issued Documents Tab -->
+            <!-- Issue New Documents Tab (This section will just contain the buttons for uploading or scanning) -->
             <!-- Issue New Documents Tab -->
             <div id="issue-new-documents" class="tab-content">
                 <h2>Issue New Documents</h2>
                 <div class="upload-section">
+                    <!-- Upload Document Button -->
                     <button class="btn upload-btn">
-                        <input type="file" id="uploadDoc" accept="image/*,application/pdf" style="display: none;">
+                        <input type="file" id="uploadDoc" accept="image/*,application/pdf" style="display: none;" onchange="handleFileUpload(event)">
                         <label for="uploadDoc" class="upload-btn">Upload Document</label>
-                        <img id="uploadPreview" src="" alt="Document Preview" style="display:none; margin-top: 20px; max-width: 100%; border-radius: 5px;">
                     </button>
-                    <button class="btn upload-btn">
-                        <input type="file" id="scanDoc" accept="image/*" capture="environment" style="display: none;">
-                        <label for="scanDoc" class="scan-btn">Scan Document</label>
-                        <img id="scanPreview" src="" alt="Scanned Document Preview" style="display:none; margin-top: 20px; max-width: 100%; border-radius: 5px;">
-                    </button> 
+
+                    <!-- Scan Document Button -->
+                    <button class="btn scan-btn" onclick="openCamera()">Scan Document</button>
                 </div>
-                <p>Upload or scan a document to issue a new one.</p>
+
+                <!-- Camera Preview -->
+                <!-- Camera Preview -->
+                <div id="camera-preview" style="display: none;">
+                    <video id="camera-video" autoplay></video>
+                    <div class="camera-controls">
+                        <button id="capture-btn" class="btn capture-btn">Capture</button>
+                        <button id="close-camera-btn" class="btn close-btn" onclick="closeCamera()">Close</button>
+                    </div>
+                </div>
+
             </div>
 
+
+            <!-- Issued Documents Tab (This will show the uploaded and scanned documents) -->
+            <div id="issued-documents" class="tab-content">
+                <h2>Issued Documents</h2>
+                <div id="document-list">
+                    <h3>Your Documents</h3>
+                    <ul id="documents-list">
+                        <!-- List of uploaded or scanned documents will appear here -->
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <!-- Digital ID Tab -->
+            <div id="digital-id" class="tab-content">
+                <h2>Your Digital ID</h2>
+                <div class="digital-id-section">
+                    <h3>Virtual ID</h3>
+                    <p id="virtual-id">Loading...</p> <!-- Virtual ID will be generated dynamically -->
+                    <h3>QR Code</h3>
+                    <div id="qr-code"></div> <!-- QR Code will be rendered here -->
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
             <!-- Profile Tab -->
             <div id="profile" class="tab-content">
                 <h2>Your Profile</h2>
                 <div class="profile-info">
-                    <div class="profile-item">
+                    <div class="profile-pic-section">
+                        <img src="profile-placeholder.jpg" alt="Profile Picture">
+                        <input type="file" id="profile-pic-upload" style="display: none;" onchange="uploadProfilePicture(event)">
+                        <button onclick="document.getElementById('profile-pic-upload').click()">Change Profile Picture</button>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="profile-username" readonly>
                         <label for="profile-username">Username</label>
-                        <input type="text" id="profile-username" value="JohnDoe" readonly>
                     </div>
-                    <div class="profile-item">
+                    <div class="input-field">
+                        <input type="email" id="profile-email" readonly>
                         <label for="profile-email">Email</label>
-                        <input type="email" id="profile-email" value="johndoe@example.com" readonly>
                     </div>
-                    <button class="btn edit-btn" onclick="toggleEditProfile()">Edit Profile</button>
-                    <button class="btn save-btn hidden" onclick="saveProfile()">Save Changes</button>
+                    <div class="input-field">
+                        <textarea id="profile-bio" readonly></textarea>
+                        <label for="profile-bio">Bio</label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="profile-skills" readonly>
+                        <label for="profile-skills">Skills</label>
+                    </div>
+                    <button class="edit-btn" onclick="toggleEditProfile()">Edit Profile</button>
+                    <button class="save-btn hidden" onclick="saveProfile()">Save Changes</button>
                 </div>
             </div>
+
+
 
             <!-- Settings Tab -->
             <div id="settings" class="tab-content">
@@ -84,20 +149,14 @@
                         <label for="confirm-password">Confirm New Password</label>
                         <input type="password" id="confirm-password" placeholder="Confirm new password">
                     </div>
-                    <button class="btn save-btn" onclick="changePassword()">Change Password</button>
+                    <button class="save-btn" onclick="changePassword()">Change Password</button>
                 </div>
 
-                <div class="settings-section">
-                    <h3>Notification Settings</h3>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="email-notifications" checked>
-                        <label for="email-notifications">Email Notifications</label>
-                    </div>
-                    <button class="btn save-btn" onclick="saveSettings()">Save Settings</button>
-                </div>
             </div>
+
+
         </div>
-    </div>
+        </div>
 
     <script src="script.js"></script>
 </body>
