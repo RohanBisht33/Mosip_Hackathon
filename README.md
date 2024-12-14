@@ -1,3 +1,7 @@
+
+
+<img src="secure_id_logo.png" alt="Logo" width="200" height="200">
+
 # Mosip_Hackathon - Secure ID - Digital Identity Management System
 
 Secure ID is a modern digital identity management system designed to enable users to securely upload, manage, and share their personal documents and digital identities. With features such as document scanning, QR code generation, and a user-friendly dashboard, Secure ID ensures seamless and secure identity handling.
@@ -48,17 +52,12 @@ Secure ID is a modern digital identity management system designed to enable user
 3. **Digital Identity Generation**: A unique digital ID is created for each user along with a QR code for sharing.
 4. **User Dashboard**: A user-friendly dashboard helps manage profiles, documents, and digital identities.
 
-> **Note**: Some features, like document scanning and blockchain integration, are still being developed.
+> **Note**: Some features, like encryption and blockchain integration, are still being developed.
 
-## Getting Started
+## License
 
-### Prerequisites
+This project is licensed under the MIT License 
 
-1. Install [Node.js](https://nodejs.org/).
-2. Clone the repository:
 
-```bash
-git clone https://github.com/YourUsername/Mosip_Hackathon.git
-cd Mosip_Hackathon
-```
+
 > **Feel free to open an issue or reach out for any questions or suggestions!**
