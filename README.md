@@ -52,7 +52,7 @@ Secure ID is a modern digital identity management system designed to enable user
 3. **Digital Identity Generation**: A unique digital ID is created for each user along with a QR code for sharing.
 4. **User Dashboard**: A user-friendly dashboard helps manage profiles, documents, and digital identities.
 
-> **Note**: Some features, like document scanning and blockchain integration, are still being developed.
+> **Note**: Some features, like encryption and blockchain integration, are still being developed.
 
 ## License
 
