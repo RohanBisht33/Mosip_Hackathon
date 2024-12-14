@@ -57,15 +57,7 @@ Secure ID is a modern digital identity management system designed to enable user
 ## License
 
 This project is licensed under the MIT License 
-## Getting Started
 
-### Prerequisites
 
-1. Install [Node.js](https://nodejs.org/).
-2. Clone the repository:
 
-```bash
-git clone https://github.com/YourUsername/Mosip_Hackathon.git
-cd Mosip_Hackathon
-```
 > **Feel free to open an issue or reach out for any questions or suggestions!**
