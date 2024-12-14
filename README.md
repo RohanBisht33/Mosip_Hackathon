@@ -50,6 +50,9 @@ Secure ID is a modern digital identity management system designed to enable user
 
 > **Note**: Some features, like document scanning and blockchain integration, are still being developed.
 
+## License
+
+This project is licensed under the MIT License 
 ## Getting Started
 
 ### Prerequisites
