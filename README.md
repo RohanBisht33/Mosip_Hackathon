@@ -1,6 +1,6 @@
 
 
-<img src="secure_id_logo.png" alt="Logo" width="200" height="200">
+<img src="secure_idlogo.png" alt="Logo" width="200" height="200">
 
 # Mosip_Hackathon - Secure ID - Digital Identity Management System
 
