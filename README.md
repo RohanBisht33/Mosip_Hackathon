@@ -1,3 +1,7 @@
+
+
+<img src="secure_id_logo.png" alt="Logo" width="200" height="200">
+
 # Mosip_Hackathon - Secure ID - Digital Identity Management System
 
 Secure ID is a modern digital identity management system designed to enable users to securely upload, manage, and share their personal documents and digital identities. With features such as document scanning, QR code generation, and a user-friendly dashboard, Secure ID ensures seamless and secure identity handling.
