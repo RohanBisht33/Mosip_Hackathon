@@ -13,7 +13,7 @@
         <!-- Sidebar Navigation -->
         <div class="sidebar">
             <div class="sidebar-header">
-                <img src="secure_id.png" alt="Logo" class="logo" >
+                <img src="secure_idlogo.png" alt="Logo" class="logo" >
                 <h1>Secure ID</h1>
             </div>
             <nav class="sidebar-nav" id="menu">
@@ -47,7 +47,7 @@
                     <li>Scan and save physical documents</li>
                     <li>Securely update your profile</li>
                     <li>Generate QR codes for instant sharing</li>
-                </ul>
+                </ul> 
             </div>
 
             <!-- Issued Documents Tab -->
@@ -87,6 +87,7 @@
                     <ul id="documents-list">
                         <!-- List of uploaded or scanned documents will appear here -->
                     </ul>
+                    <button  class="btn" href="#" id="issue-new-documents-tab" onclick="showTab('issue-new-documents')">Add Documents</button>
                 </div>
             </div>
 
@@ -109,25 +110,24 @@
                 <h2>Your Profile</h2>
                 <div class="profile-info">
                     <div class="profile-pic-section">
-                        <img src="profile-placeholder.jpg" alt="Profile Picture">
+                        <img src="profile-placeholder.jpg">
+                    </div>
+                    <div class="profile-pic-section">
                         <input type="file" id="profile-pic-upload" style="display: none;" onchange="uploadProfilePicture(event)">
                         <button onclick="document.getElementById('profile-pic-upload').click()">Change Profile Picture</button>
                     </div>
                     <div class="input-field">
-                        <input type="text" id="profile-username" readonly>
-                        <label for="profile-username">Username</label>
+                        <input type="text" id="profile-username" placeholder="Username"  >
+                        
                     </div>
                     <div class="input-field">
-                        <input type="email" id="profile-email" readonly>
-                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" placeholder="Email">
                     </div>
                     <div class="input-field">
-                        <textarea id="profile-bio" readonly></textarea>
-                        <label for="profile-bio">Bio</label>
+                        <textarea id="profile-bio" placeholder="Bio"></textarea>
                     </div>
                     <div class="input-field">
-                        <input type="text" id="profile-skills" readonly>
-                        <label for="profile-skills">Skills</label>
+                        <input type="text" id="profile-skills" placeholder="Skills">
                     </div>
                     <button class="edit-btn" onclick="toggleEditProfile()">Edit Profile</button>
                     <button class="save-btn hidden" onclick="saveProfile()">Save Changes</button>

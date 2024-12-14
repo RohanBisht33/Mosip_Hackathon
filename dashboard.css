@@ -88,6 +88,7 @@ h4 {
     font-weight: 700;
     color: #333;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 h3 {
@@ -96,11 +97,13 @@ h3 {
     margin-top: 50px;
     margin-bottom: 10px;
 }
+
 h1 {
     font-size: 32px; /* Font size adjusted for section headers */
     color: #ffffff;
     margin-top: 50px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Tab Content */
@@ -120,18 +123,23 @@ h1 {
 }
 
 /* Stylish Button Styling */
-.upload-btn, .scan-btn {
+.upload-btn, .scan-btn ,.btn {
     background-color: #6a11cb; /* Blue button for upload and scan */
-    color: white;
+    color:   white;
     padding: 12px 20px;
     border-radius: 8px;
     font-size: 16px;
     transition: background-color 0.3s;
     cursor: pointer;
     display: inline-block;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
 }
 
-    .upload-btn:hover, .scan-btn:hover {
+
+
+    .upload-btn:hover, .scan-btn:hover  {
         background-color: #8e3de6; /* Lighter blue on hover */
     }
 
@@ -311,6 +319,7 @@ h1 {
 .profile-pic-section {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
     margin-bottom: 30px;
 }

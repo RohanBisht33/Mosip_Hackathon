@@ -168,3 +168,102 @@
     text-decoration: underline;
   }
   
+/* General Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  /* For tablets or smaller desktops */
+  .main-container {
+    flex-direction: column; /* Stack left and right containers */
+  }
+
+  .left-container {
+    align-items: center; /* Center-align text */
+    text-align: center; /* Center-align text */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .left-container h1 {
+    font-size: 36px; /* Smaller heading */
+  }
+
+  .left-container p {
+    font-size: 18px; /* Adjust text size */
+  }
+
+  .right-container {
+    border-radius: 0; /* Remove rounded corners */
+    box-shadow: none; /* Simplify for smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) and (max-height: 1080px) {
+  /* For mobile devices */
+  .main-container {
+    flex-direction: column; /* Stack containers */
+    height: auto; /* Allow scrolling on mobile */
+  }
+
+  .left-container {
+    padding: 15px; /* Reduce padding */
+  }
+
+  .left-container h1 {
+    font-size: 28px; /* Further reduce heading size */
+  }
+
+  .left-container p {
+    font-size: 16px; /* Smaller paragraph text */
+  }
+
+  .right-container {
+    padding: 20px; /* Add some padding */
+    border-radius: 0; /* Flatten corners */
+    box-shadow: none; /* Simplify */
+  }
+
+  .form-wrapper {
+    width: 90%; /* Reduce form width */
+    max-width: 300px; /* Keep it compact */
+  }
+
+  h2 {
+    font-size: 24px; /* Smaller headings */
+  }
+
+  .btn {
+    padding: 12px; /* Slightly smaller buttons */
+    font-size: 16px; /* Adjust text size */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* For small mobile screens */
+  .left-container {
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .left-container h1 {
+    font-size: 24px; /* Compact heading */
+  }
+
+  .left-container p {
+    font-size: 14px; /* Small paragraph text */
+  }
+
+  .form-wrapper {
+    padding: 15px; /* Less padding on the form */
+  }
+
+  h2 {
+    font-size: 20px; /* Smallest heading size */
+  }
+
+  .btn {
+    font-size: 14px; /* Small buttons */
+    padding: 10px; /* Compact buttons */
+  }
+
+  .input-field input {
+    font-size: 14px; /* Smaller input font */
+    padding: 10px; /* Compact input fields */
+  }
+}
