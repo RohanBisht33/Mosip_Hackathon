@@ -142,11 +142,11 @@
                 <div class="settings-section">
                     <h3>Change Password</h3>
                     <div class="input-field">
-                        
                         <input type="password" id="new-password" placeholder="Enter new password">
+                        <p class="strength" id="strengthMessage"></p>
+                        <p>Try Including Special Characters,Upper Case characters , Numeric values</p>
                     </div>
                     <div class="input-field">
-                        
                         <input type="password" id="confirm-password" placeholder="Confirm new password">
                     </div>
                     <button class="save-btn" onclick="changePassword()">Change Password</button>
@@ -159,5 +159,6 @@
         </div>
 
     <script src="script.js"></script>
+    <script src="passwordChecker.js" ></script>
 </body>
 </html>
