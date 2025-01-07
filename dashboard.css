@@ -500,7 +500,24 @@ h1 {
             color: #555;
             margin-bottom: 10px;
         }
+/* Password Strength */
+.strength {
+    margin-top: 0 ;
+    padding: 0px;
+  }
+  .strong {
+    color: green;
+  }
+  .weak {
+    color: red;
+  }
+  .medium {
+    color: orange;
+  }
 
+  .links a:hover {
+    text-decoration: underline;
+  } 
 /* Responsive Design */
 @media (max-width: 768px) {
     #home {
