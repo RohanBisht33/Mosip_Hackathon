@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="main-container">
         <div class="left-container">
@@ -20,17 +22,18 @@
                 <h2>Create Account</h2>
                 <form onsubmit="return createAccount(event)">
                     <div class="input-field">
-                        <input type="text" id="new-username" required>
-                        <label for="new-username">Username</label>
+                        <input type="text" id="new-username" placeholder="Username" required>
+
                     </div>
                     <div class="input-field">
-                        <input type="password" id="new-password" required>
-                        <label for="new-password">Password</label>
+                        <input type="password" id="new-password" placeholder="New password" required>
+                        <p class="strength" id="strengthMessage"></p>
                     </div>
+                    
                     <div class="input-field">
-                        <input type="password" id="confirm-password" required>
-                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" required>
                     </div>
+
                     <button class="btn">Create Account</button>
                     <p id="create-error-message"></p>
                     <p class="links">
@@ -40,17 +43,15 @@
             </div>
 
             <!-- Login Form -->
-            <div class="form-wrapper hidden" id="login-form">
+            <div class="form-wrapper hidden" id="login-form">🔄
                 <img src="secure_idlogo.png" alt="Logo" class="logo">
                 <h2>Login</h2>
                 <form onsubmit="return validateForm(event)">
                     <div class="input-field">
-                        <input type="text" id="username" required>
-                        <label for="username">Username</label>
+                        <input type="text" id="username" required placeholder="Username">
                     </div>
                     <div class="input-field">
-                        <input type="password" id="password" required>
-                        <label for="password">Password</label>
+                        <input type="password" id="password" required placeholder="Password">
                     </div>
                     <button class="btn">Login</button>
                     <p id="error-message"></p>
@@ -88,5 +89,7 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="passwordChecker.js"></script>
 </body>
+
 </html>
