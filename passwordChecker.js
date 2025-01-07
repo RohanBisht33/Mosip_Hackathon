@@ -1,7 +1,7 @@
-document.getElementById("password").addEventListener("input", checkPasswordStrength);
+document.getElementById("new-password").addEventListener("input", checkPasswordStrength);
 
 function checkPasswordStrength() {
-    const password = document.getElementById("password").value;
+    const password = document.getElementById("new-password").value;
     const strengthMessage = document.getElementById("strengthMessage");
     let strength = "";
 
